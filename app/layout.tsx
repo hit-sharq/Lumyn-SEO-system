@@ -34,8 +34,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const orgLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Lumyn Technologies',
+    url: 'https://lumyn.co.ke',
+    logo: 'https://lumyn.co.ke/favicon-192x192.png',
+    description: 'Lumyn Technologies is a Nairobi-based digital innovation studio building enterprise-grade software, products, and experiences.',
+    address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' },
+    contactPoint: { '@type': 'ContactPoint', email: 'info@lumyn.co.ke', contactType: 'customer service' },
+    sameAs: [],
+  }
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
+      </head>
       <body className="antialiased" suppressHydrationWarning>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
