@@ -1,0 +1,5 @@
+import Link from 'next/link'
+import { ArrowDown } from 'lucide-react'
+import { SiteShell } from '@/components/site-shell'
+export const metadata = { title: 'About | Lumyn Technologies', description: 'A Nairobi-based digital innovation studio building enterprise-grade software, products, and experiences.' }
+export default function AboutPage() { return <SiteShell><main className="section wrap" id="about"><div className="section-heading"><div><span className="section-label">Who we are</span><h2>Pioneering the future of digital innovation</h2></div><ArrowDown /></div><div className="principles"><div><div className="principle-mark" /><h3>Enterprise solutions</h3><p>Scalable architecture built for mission-critical requirements, from M-Pesa payment rails to multi-tenant platforms.</p></div><div><div className="principle-mark" /><h3>Cutting-edge technology</h3><p>Leveraging AI, cloud-native architectures, and modern development practices across every build.</p></div><div><div className="principle-mark" /><h3>Global impact</h3><p>Trusted by businesses across Kenya and beyond to drive real digital transformation.</p></div></div></main></SiteShell> }
