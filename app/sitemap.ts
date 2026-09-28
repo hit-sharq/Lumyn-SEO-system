@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { content } from '@/lib/content'
 
-const siteUrl = 'https://lumyn.co.ke'
+const siteUrl = 'https://blogs.lumyn.co.ke'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

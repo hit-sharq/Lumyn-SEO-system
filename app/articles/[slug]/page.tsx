@@ -4,16 +4,20 @@ import { content, formatDate, getContent } from '@/lib/content'
 import { ArrowLeft, Share2 } from 'lucide-react'
 import Link from 'next/link'
 
-const SITE = 'https://lumyn.co.ke'
+const SITE = 'https://blogs.lumyn.co.ke'
+const MAIN_SITE = 'https://www.lumyn.co.ke'
 
 export function generateStaticParams() { return content.filter((item) => item.type === 'article').map((item) => ({ slug: item.slug })) }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const item = getContent((await params).slug)
   if (!item) return { title: 'Article | Lumyn' }
+  const url = `${SITE}/articles/${item.slug}`
   return {
-    title: `${item.title} | Lumyn`,
+    title: `${item.title} | Lumyn Technologies Blog`,
     description: item.excerpt,
-    openGraph: { title: item.title, description: item.excerpt, url: `${SITE}/articles/${item.slug}`, type: 'article', siteName: 'Lumyn Technologies' },
+    openGraph: { title: item.title, description: item.excerpt, url, type: 'article', siteName: 'Lumyn Technologies Blog', publishedTime: item.date, authors: [item.author], section: item.category },
+    twitter: { card: 'summary_large_image', title: item.title, description: item.excerpt },
+    alternates: { canonical: url },
   }
 }
 
@@ -44,10 +48,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     headline: item.title,
     description: item.excerpt,
     author: { '@type': 'Organization', name: item.author },
-    publisher: { '@type': 'Organization', name: 'Lumyn Technologies', logo: { '@type': 'ImageObject', url: `${SITE}/favicon-192x192.png` } },
+    publisher: { '@type': 'Organization', name: 'Lumyn Technologies', logo: { '@type': 'ImageObject', url: `${MAIN_SITE}/favicon-192x192.png` } },
     datePublished: item.date,
+    dateModified: item.date,
     mainEntityOfPage: url,
     image: `${SITE}${item.image}`,
+    articleSection: item.category,
+    inLanguage: 'en-KE',
   }
   const breadcrumbLd = {
     '@context': 'https://schema.org',

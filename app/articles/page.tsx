@@ -2,9 +2,14 @@ import { SiteShell } from '@/components/site-shell'
 import { ContentCard } from '@/components/content-card'
 import { articles } from '@/lib/content'
 
-const SITE = 'https://lumyn.co.ke'
+const SITE = 'https://blogs.lumyn.co.ke'
 
-export const metadata = { title: 'Articles | Lumyn Technologies', description: 'Perspectives on product, engineering, design, and digital growth from Lumyn Technologies.' }
+export const metadata = { 
+  title: 'Articles | Lumyn Technologies Blog', 
+  description: 'Perspectives on product, engineering, design, and digital growth from Lumyn Technologies. Building for Kenya\'s digital economy.',
+  openGraph: { title: 'Articles | Lumyn Technologies Blog', description: 'Perspectives on product, engineering, design, and digital growth from Lumyn Technologies.', url: `${SITE}/articles`, siteName: 'Lumyn Technologies Blog', type: 'website' },
+  twitter: { card: 'summary_large_image', title: 'Articles | Lumyn Technologies Blog', description: 'Perspectives on product, engineering, design, and digital growth from Lumyn Technologies.' },
+}
 
 export default function ArticlesPage() {
   const breadcrumbLd = {
@@ -15,8 +20,24 @@ export default function ArticlesPage() {
       { '@type': 'ListItem', position: 2, name: 'Articles', item: `${SITE}/articles` },
     ],
   }
+  const blogLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Lumyn Technologies Blog',
+    url: SITE,
+    description: 'Practical perspectives on product, engineering, design, and digital growth from Lumyn Technologies.',
+    blogPosts: articles.map(item => ({
+      '@type': 'BlogPosting',
+      headline: item.title,
+      url: `${SITE}/articles/${item.slug}`,
+      datePublished: item.date,
+      author: { '@type': 'Organization', name: item.author },
+      publisher: { '@type': 'Organization', name: 'Lumyn Technologies' },
+    })),
+  }
   return <SiteShell><main className="listing-page wrap">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }} />
     <div className="listing-intro"><span className="section-label">The journal / 01</span><h1>Articles that<br /><em>move ideas</em> forward.</h1><p>Practical perspectives from the people building digital products, platforms, and experiences at Lumyn.</p></div>
     <div className="listing-bar"><span>{articles.length} stories</span><span>Product · Engineering · Studio</span></div>
     <div className="card-grid">{articles.map((item) => <ContentCard key={item.slug} item={item} />)}</div>
