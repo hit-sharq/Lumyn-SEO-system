@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation'
 import { SiteShell } from '@/components/site-shell'
 import { content, formatDate, getContent } from '@/lib/content'
-import { ArrowLeft, Share2 } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import { ShareButton } from '@/components/share-button'
 
 const SITE = 'https://blogs.lumyn.co.ke'
 const MAIN_SITE = 'https://www.lumyn.co.ke'
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 const OPEN_TAG = String.fromCharCode(60) + 'strong>'
 const CLOSE_TAG = String.fromCharCode(60, 47, 115, 116, 114, 111, 110, 103, 62)
+
 function BodyParagraph({ text }: { text: string }) {
   const idx = text.indexOf(CLOSE_TAG)
   if (text.startsWith(OPEN_TAG) && idx > -1) {
@@ -73,7 +75,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <span className="section-label">{item.category} / {formatDate(item.date)}</span>
       <h1>{item.title}</h1>
       <p>{item.excerpt}</p>
-      <div className="byline"><span>By {item.author}</span><span>{item.readTime}</span><button className="share-btn"><Share2 size={16} /> Share</button></div>
+      <div className="byline"><span>By {item.author}</span><span>{item.readTime}</span><ShareButton url={url} title={item.title} /></div>
     </div>
     <img className="article-hero" src={item.image} alt={item.title} />
     <div className="article-body">{item.content.map((paragraph, i) => <BodyParagraph key={i} text={paragraph} />)}
