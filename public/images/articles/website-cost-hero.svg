@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="200" y="180" width="800" height="270" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+  <rect x="240" y="220" width="180" height="180" rx="8" fill="url(#accent)" opacity="0.2"/>
+  <text x="330" y="310" font-family="Arial" font-size="48" font-weight="800" fill="#ff4d00" text-anchor="middle">KES</text>
+  <text x="330" y="350" font-family="Arial" font-size="14" fill="#888" text-anchor="middle">15K — 2.5M+</text>
+  <rect x="460" y="220" width="180" height="180" rx="8" fill="#ffffff" opacity="0.1"/>
+  <text x="550" y="310" font-family="Arial" font-size="24" font-weight="800" fill="#ff8c00" text-anchor="middle">4 Tiers</text>
+  <text x="550" y="340" font-family="Arial" font-size="14" fill="#888" text-anchor="middle">DIY → Freelancer → Agency → Custom</text>
+  <rect x="680" y="220" width="180" height="180" rx="8" fill="#ff4d00" opacity="0.15"/>
+  <text x="770" y="310" font-family="Arial" font-size="24" font-weight="800" fill="#ffffff" text-anchor="middle">+30%</text>
+  <text x="770" y="340" font-family="Arial" font-size="14" fill="#888" text-anchor="middle">Hidden Costs</text>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
+    <text x="600" y="500" font-size="32" fill="url(#accent)">Real Cost Breakdown</text>
+    <text x="600" y="540" font-size="18" fill="#888">No Fantasy Quotes • All-In TCO • Kenya Market Data</text>
+  </g>
+</svg>

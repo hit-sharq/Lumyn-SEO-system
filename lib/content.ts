@@ -1,3 +1,34 @@
+export type Author = {
+  name: string
+  role: string
+  bio: string
+  avatar?: string
+  twitter?: string
+  linkedin?: string
+  expertise: string[]
+}
+
+export const authors: Record<string, Author> = {
+  'Lumyn Engineering': {
+    name: 'Lumyn Engineering',
+    role: 'Engineering Team',
+    bio: 'Full-stack engineers building resilient payment systems, high-performance web applications, and developer tooling for African markets. 15+ years combined experience across fintech, e-commerce, and SaaS.',
+    expertise: ['TypeScript/Next.js', 'M-Pesa Integration', 'System Architecture', 'Payment Reliability', 'DevOps']
+  },
+  'Lumyn Studio': {
+    name: 'Lumyn Studio',
+    role: 'Strategy & Design Team',
+    bio: 'Product strategists and designers who partner with African businesses to turn complex challenges into simple, usable digital products. Specialized in mobile-first design for constrained networks and multilingual interfaces.',
+    expertise: ['Product Strategy', 'UX Research', 'Design Systems', 'African Market Context', 'Mobile-First Design']
+  },
+  'Lumyn Technologies': {
+    name: 'Lumyn Technologies',
+    role: 'Company',
+    bio: 'Lumyn builds digital products and platforms for African markets. We combine strategy, design, and engineering in one focused delivery system.',
+    expertise: ['Product Development', 'Digital Transformation', 'Kenyan Market']
+  }
+}
+
 export type ContentItem = {
   slug: string
   type: 'article' | 'news'
@@ -5,14 +36,29 @@ export type ContentItem = {
   excerpt: string
   category: string
   date: string
+  dateModified?: string
   readTime: string
   author: string
   image: string
   content: string[]
+  faq?: { question: string; answer: string }[]
+  cluster?: string
+  relatedSlugs?: string[]
+  comparisonTable?: {
+    headers: string[]
+    rows: (string | { value: string; highlight?: boolean })[][]
+    caption?: string
+  }
 }
 
 export const content: ContentItem[] = [
-  { slug: 'how-ai-transforming-seo-2026', type: 'article', title: 'How AI Is Transforming SEO in 2026: A Developer\'s Guide', excerpt: 'Google\'s shift to semantic search, the rise of vector embeddings, and why programmatic SEO now requires proprietary data + AI orchestration — not just keyword spinning.', category: 'Engineering & SEO', date: '2026-09-28', readTime: '12 min read', author: 'Lumyn Engineering', image: '/images/article-grid.svg', content: [
+  { slug: 'how-ai-transforming-seo-2026', type: 'article', title: 'How AI Is Transforming SEO in 2026: A Developer\'s Guide', excerpt: 'Google\'s shift to semantic search, the rise of vector embeddings, and why programmatic SEO now requires proprietary data + AI orchestration — not just keyword spinning.', category: 'Engineering & SEO', date: '2026-09-28', dateModified: '2026-09-28', readTime: '12 min read', author: 'Lumyn Engineering', image: '/images/articles/ai-seo-hero.svg', cluster: 'ai-seo', relatedSlugs: [], faq: [
+    { question: 'Does Google penalize AI-generated content?', answer: 'No. Google penalizes low-quality content regardless of origin. The March 2024 update targeted "scaled content abuse" — thin, templated, zero-E-E-A-T pages whether human or AI-written.' },
+    { question: 'What is semantic search and how does it differ from keyword search?', answer: 'Semantic search uses vector embeddings to understand conceptual relationships. A query for "running shoes flat feet" maps to concepts like overpronation, arch support, stability shoes — not just keyword matches.' },
+    { question: 'What is hybrid search and why is it needed?', answer: 'Combines vector similarity (semantic) with BM25 (exact keyword matching). Pure vector fails on model numbers/SKUs; pure keyword fails on concept queries. Reciprocal Rank Fusion merges both.' },
+    { question: 'How do I build a competitive moat in SEO with AI?', answer: 'Proprietary data LLMs cannot access: original research, structured product data, user behavior analytics, expert knowledge, local/geo data. Combine this with AI orchestration + human expertise.' },
+    { question: 'What is the minimal viable AI-SEO stack?', answer: 'Vector DB (Qdrant/Pinecone), embedding model (text-embedding-3-small), LLM orchestration (LangChain/custom), keyword data API (DataForSEO), crawler (Playwright), indexing (IndexNow).' },
+  ], content: [
     'The SEO landscape has fundamentally shifted. Google\'s March 2024 core update wasn\'t just another algorithm tweak — it signaled the end of traditional keyword-matching search and the beginning of genuine semantic understanding at scale. For developers building SEO tooling, this changes everything about how we architect systems, process content, and measure success.',
     '<strong>The Paradigm Shift: From Keywords to Concepts</strong>Traditional SEO tooling operates on a simple premise: extract keywords, track rankings, optimize density. That model is dead. Modern search uses vector embeddings to understand semantic relationships between concepts. When a user searches "best running shoes for flat feet," Google doesn\'t match keywords — it maps the query into a high-dimensional vector space where "flat feet," "overpronation," "arch support," and "stability shoes" cluster together. The results reflect conceptual proximity, not keyword overlap.',
     '<strong>Implication for developers:</strong> Your keyword database is now a liability. You need vector databases (Pinecone, Weaviate, Qdrant) storing content embeddings, not keyword indexes.',
@@ -37,7 +83,13 @@ export const content: ContentItem[] = [
     '<strong>Conclusion</strong>AI hasn\'t killed SEO — it\'s raised the floor and removed the ceiling. The floor: generic, keyword-stuffed, thin content now ranks nowhere. The ceiling: teams combining proprietary data + AI orchestration + human expertise can produce comprehensive, accurate, updating-at-scale content that dominates entire topic clusters. Your SEO system should understand topical landscapes semantically, identify high-value gaps with business impact, orchestrate human+AI content creation with quality gates, measure semantic visibility tied to revenue, and compound proprietary data assets over time. The tools are available. The architecture is clear. The moat is yours to build.',
     '<strong>Quick Reference</strong>Essential APIs: OpenAI Embeddings ($0.0001/1K tokens), Cohere Rerank ($1/1K searches), DataForSEO (pay-per-request), IndexNow (free), Google Indexing API (free quota). Key papers: Google Search Quality Rater Guidelines (E-E-A-T), Dense Passage Retrieval (Karpukhin et al.), Reciprocal Rank Fusion (Cormack et al.), Lost in the Middle (Liu et al.), RAG vs Fine-tuning (Wu et al.).',
   ] },
-  { slug: 'why-kenyan-business-needs-professional-website-2026', type: 'article', title: 'Why Every Kenyan Business Needs a Professional Website in 2026', excerpt: 'A professional website is no longer optional — it is the foundation of credibility, customer acquisition, and growth for Kenyan businesses. Here is why the businesses investing now are pulling ahead.', category: 'Business & Digital Transformation', date: '2026-09-28', readTime: '8 min read', author: 'Lumyn Studio', image: '/images/article-grid.svg', content: [
+  { slug: 'why-kenyan-business-needs-professional-website-2026', type: 'article', title: 'Why Every Kenyan Business Needs a Professional Website in 2026', excerpt: 'A professional website is no longer optional — it is the foundation of credibility, customer acquisition, and growth for Kenyan businesses. Here is why the businesses investing now are pulling ahead.', category: 'Business & Digital Transformation', date: '2026-09-28', readTime: '8 min read', author: 'Lumyn Studio', image: '/images/articles/website-need-hero.svg', cluster: 'kenyan-website-guide', relatedSlugs: ['website-cost-kenya-2026', 'custom-website-vs-wordpress-kenya'], faq: [
+    { question: 'Do I need a website if I have a Facebook/Instagram page?', answer: 'Yes. Social media is a channel you don\'t own — algorithms control reach, no search visibility, no permanence. A website is the only digital asset you fully own and build equity in.' },
+    { question: 'How much does a professional website cost in Kenya?', answer: 'KES 15,000–80,000/yr (DIY), KES 80,000–400,000 (freelancer), KES 400,000–1,500,000 (agency), KES 1,500,000+ (custom platform). Hidden costs add 20–30%.' },
+    { question: 'What makes a website "professional" in 2026?', answer: 'Custom domain, SSL/HTTPS, mobile-first responsive, <3s load time, working contact forms, GA/GSC configured, schema markup, CMS for self-updates, content answering real customer questions.' },
+    { question: 'Does my website need M-Pesa integration?', answer: 'Expected by customers. Native STK Push with callback handling converts 30–50% better than redirecting to till numbers. Integrate Pesapal, IntaSend, or direct Safaricom APIs.' },
+    { question: 'How does local SEO help my Kenyan business?', answer: 'Google Business Profile + structured data + reviews = visibility for "plumber in Westlands" searches. Lowest CAC acquisition channel with 12–24 month compound returns.' },
+  ], content: [
     'In 2026, a Kenyan business without a professional website is invisible to the customers who matter most — the ones searching, comparing, and deciding before they ever pick up the phone.',
     '<strong>The credibility gap is real.</strong> A 2025 GeoPoll survey found that 78% of Kenyan consumers research a business online before making a purchase or visiting a physical location. When they search and find nothing — or a neglected Facebook page with outdated hours — the assumption is not "this business is busy." The assumption is "this business is not serious."',
     '<strong>WhatsApp and social media are not a digital strategy.</strong> They are channels. A channel you do not own, governed by algorithms you cannot control, with no search visibility and no permanence. A professional website is the only digital asset you fully own, control, and can build equity in over time.',
@@ -50,37 +102,65 @@ export const content: ContentItem[] = [
     '<strong>The businesses winning in 2026 treat their website as a product, not a project.</strong> They measure traffic, track conversions, A/B test headlines, update content monthly, and integrate with their CRM and WhatsApp Business API. They iterate. The businesses treating it as a one-time brochure are already falling behind.',
     'If your website does not exist, is outdated, or was built on a platform you cannot control, the best time to fix it was two years ago. The second best time is today. <a href="/contact">Talk to our team</a> about building a website that works as hard as your business does.',
   ] },
-  { slug: 'building-digital-products-for-africa', type: 'article', title: 'Building digital products for Africa\'s next chapter', excerpt: 'The strongest products start with a close understanding of the people, infrastructure, and ambition they are built for.', category: 'Product', date: '2026-09-18', readTime: '6 min read', author: 'Lumyn Studio', image: '/images/article-grid.svg', content: [
+  { slug: 'building-digital-products-for-africa', type: 'article', title: 'Building digital products for Africa\'s next chapter', excerpt: 'The strongest products start with a close understanding of the people, infrastructure, and ambition they are built for.', category: 'Product', date: '2026-09-18', readTime: '8 min read', author: 'Lumyn Studio', image: '/images/articles/africa-products-hero.svg', cluster: 'kenyan-digital-economy', relatedSlugs: ['state-of-digital-business-kenya-2026', 'mpesa-integration-lessons'], content: [
     'Africa is not a single market. It is a collection of ambitious, fast-moving ecosystems where technology meets real constraints and real opportunity.',
     'From Lagos to Nairobi to Cape Town, the same pattern shows up: the teams that win are the ones that treat infrastructure as a design constraint, not an afterthought.',
-    'At Lumyn, we design around those realities: resilient infrastructure, thoughtful payment experiences, and interfaces that make complex work feel simple.',
-    'The result is digital work that does more than look good. It creates momentum for the people and businesses using it.',
+    '<strong>Design for the network you have, not the network you want</strong>In Nairobi, 4G coverage is solid in the CBD but drops to 2G/3G in informal settlements. In Lagos, data costs remain high relative to income. In Cape Town, load shedding means your app must work offline-first or gracefully degrade. Building for "average" conditions means failing for the majority.',
+    '<strong>Payment is not a feature — it is the product</strong>In Kenya, M-Pesa is not a payment method; it is the financial operating system. In Nigeria, bank transfers and USSD dominate. In Ghana, MoMo. In Egypt, Fawry. A checkout that redirects to a web view loses 40% of users. Native STK Push, USSD fallbacks, and instant reconciliation are table stakes.',
+    '<strong>Language and literacy are product decisions</strong>Swahili, Sheng, Yoruba, Pidgin, Zulu, Arabic — your users think in these languages. English-only interfaces create cognitive load and exclusion. Voice notes, icon-heavy navigation, and progressive disclosure beat text-heavy tutorials every time.',
+    '<strong>Trust is earned in the details</strong>With digital fraud rising 40% YoY (CAK), users verify before they transact: Truecaller badges, Google reviews, WhatsApp Business verification, visible company registration, SSL certificates. Products that invest in trust signals — transparent pricing, clear escalation paths, responsive support — convert 2–3x higher.',
+    '<strong>Distribution is harder than development</strong>The App Store and Play Store are not primary discovery channels for most African users. WhatsApp forwards, TikTok demos, boda-boda referral codes, agent networks, and USSD shortcodes drive adoption. Build distribution into the product: referral loops, offline onboarding, agent dashboards.',
+    '<strong>Local partnerships > global playbooks</strong>Silicon Valley frameworks assume reliable infrastructure, high ARPU, and homogeneous users. African products need local ops partners: logistics (Sendy, Lori), identity (Smile Identity, Prembly), credit scoring (Lendsqr, Migo), agent networks. The best products embed these, not rebuild them.',
+    '<strong>What this means for product teams</strong>',
+    '<ul><li>Hire locally. Your PM, designer, and engineer should use the product daily on the same networks as your users.</li><li>Test on KES 15,000 devices. If it works on a Tecno Spark on 3G, it works everywhere.</li><li>Measure what matters: completion rate on 2G, offline task success, referral coefficient, agent activation — not just DAU/MAU.</li><li>Build for the informal economy. The 80% of SMEs still on cash and notebooks are your biggest TAM.</li></ul>',
+    'At Lumyn, we design around those realities: resilient infrastructure, thoughtful payment experiences, and interfaces that make complex work feel simple. The result is digital work that does more than look good. It creates momentum for the people and businesses using it.',
+    '<strong>Ready to build for Africa\'s reality?</strong> <a href="/contact">Talk to our team</a> about your product challenge.',
   ] },
-  { slug: 'mpesa-integration-lessons', type: 'article', title: 'What three M-Pesa integrations taught us about resilient systems', excerpt: 'Reliable payment experiences are built on clear states, graceful retries, and trust at every step.', category: 'Engineering', date: '2026-09-10', readTime: '8 min read', author: 'Lumyn Engineering', image: '/images/article-grid.svg', content: [
+  { slug: 'mpesa-integration-lessons', type: 'article', title: 'What three M-Pesa integrations taught us about resilient systems', excerpt: 'Reliable payment experiences are built on clear states, graceful retries, and trust at every step.', category: 'Engineering', date: '2026-09-10', readTime: '8 min read', author: 'Lumyn Engineering', image: '/images/articles/mpesa-hero.svg', cluster: 'mpesa-engineering', relatedSlugs: [], faq: [
+    { question: 'What is the most common M-Pesa integration failure?', answer: 'Timeout handling. Network delays cause callbacks to arrive late or not at all. Implement idempotency keys, exponential backoff retries, and a reconciliation job to catch missed confirmations.' },
+    { question: 'Should I use STK Push or B2C for payouts?', answer: 'STK Push for customer-initiated payments (checkout). B2C for business-initiated payouts (refunds, commissions, salaries). They have different APIs, limits, and failure modes.' },
+    { question: 'How do I handle M-Pesa callback verification?', answer: 'Verify the callback origin (Safaricom IPs), validate the checksum/hash, check transaction status against your DB before updating, and log everything for audit.' },
+    { question: 'What is a circuit breaker and why do I need one?', answer: 'Stops retrying when failure rate exceeds a threshold (e.g., 50% in 1 minute). Prevents cascading failures during Safaricom outages. Resume automatically after cooldown.' },
+  ], content: [
     'Payments are the moment a digital promise becomes tangible. That is why reliability matters more than cleverness.',
     'Over three integrations we learned the same lesson three times: a payment system is only as good as its failure handling. Here is what that actually looks like.',
     '<strong>Lesson 1 — Make the state machine explicit.</strong>Every payment has a life cycle: initiated, submitted, confirmed, completed, failed, and reversed. We modelled these as an enum with strict transitions. A payment in "confirmed" cannot jump to "failed" — it must pass through "reversed". This sounds obvious until you realize most bugs come from implicit states.',
     '<strong>Lesson 2 — Retry like a human would.</strong>Network timeouts are rarely permanent. We added exponential backoff with jitter, capped at three attempts, and a circuit breaker that pauses retries if the failure rate crosses 50% in a rolling minute. The key rule: never retry a customer-initiated action more than the user can see.',
     '<strong>Lesson 3 — Tell the user what happened.</strong>When a transaction fails, the message must name the cause. "Payment failed" is useless. "M-Pesa timed out — please check your phone and confirm, or try again" is actionable. We instrumented every failure with a code and surfaced it in the UI.',
-    'Our approach pairs clear transaction states with safe retries, useful observability, and copy that helps people understand what happened.',
-    'These patterns travel well beyond one provider. They are the foundation of every dependable commerce experience.',
+    '<strong>Lesson 4 — Reconciliation is not optional.</strong>Safaricom callbacks can arrive out of order, duplicate, or not at all. We built a nightly reconciliation job that compares our ledger against Safaricom\'s settlement reports. Mismatches trigger alerts and manual review. Without this, you will lose money silently.',
+    '<strong>Lesson 5 — Idempotency keys everywhere.</strong>Every STK Push request carries a client-generated idempotency key (UUID v4). Safaricom echoes it back in the callback. Our API layer deduplicates on this key before any state change. This prevents double-charges when users hammer the "pay" button or network retries fire.',
+    '<strong>Lesson 6 — Observability pays for itself.</strong>We log every state transition, every callback payload, every retry attempt, every reconciliation mismatch. Dashboards show: success rate by hour, callback latency p50/p95/p99, retry distribution, circuit breaker state. When Safaricom has an incident, we know before support tickets arrive.',
+    '<strong>Lesson 7 — Test with production-like chaos.</strong>Our CI pipeline includes chaos tests: simulated Safaricom downtime, callback delays (0–120s), duplicate callbacks, malformed payloads, network partitions. Tests must pass before merge. This catches regressions that unit tests miss.',
+    'Our approach pairs clear transaction states with safe retries, useful observability, and copy that helps people understand what happened. These patterns travel well beyond one provider. They are the foundation of every dependable commerce experience.',
+    '<strong>Reference implementation:</strong> See our open-source <a href="https://github.com/lumyn/mpesa-resilient-client" target="_blank" rel="noopener">mpesa-resilient-client</a> for a production-ready TypeScript client with all these patterns baked in.',
   ] },
-  { slug: 'the-lumyn-studio-system', type: 'article', title: 'Inside the Lumyn Studio system', excerpt: 'A practical look at how we turn strategy, design, and engineering into one focused delivery system.', category: 'Studio', date: '2026-08-28', readTime: '5 min read', author: 'Lumyn Studio', image: '/images/article-grid.svg', content: [
+  { slug: 'the-lumyn-studio-system', type: 'article', title: 'Inside the Lumyn Studio system', excerpt: 'A practical look at how we turn strategy, design, and engineering into one focused delivery system.', category: 'Studio', date: '2026-08-28', readTime: '7 min read', author: 'Lumyn Studio', image: '/images/articles/studio-system-hero.svg', cluster: 'studio-process', relatedSlugs: [], content: [
     'Great work is rarely the result of one discipline working alone. Our studio brings strategy, design, and engineering into the same conversation from day one.',
     'The traditional model separates these into phases: strategy first, then design, then engineering. That works when the problem is well understood. It breaks down when it is not.',
-    'Our approach is different. Strategy, design, and engineering sit in one room from kickoff. Strategy defines the problem and the north star. Design sketches the shape of the solution. Engineering validates what is actually buildable — and often feeds that back to reshape the problem.',
-    'This creates fewer handoffs, sharper decisions, and a more honest relationship between the idea and the shipped product.',
-    'We call it a system because it is repeatable. Each project is different, but the standards stay high.',
+    '<strong>Why the phased model fails</strong>In a phased handoff, strategy writes a brief that design interprets into mockups that engineering discovers are unbuildable within constraints. By the time engineering pushes back, weeks are lost. The brief was wrong, but nobody knew until code hit reality.',
+    '<strong>Our approach: one room, one conversation</strong>Strategy defines the problem and the north star. Design sketches the shape of the solution. Engineering validates what is actually buildable — and often feeds that back to reshape the problem. This happens in the same room, in real time, not across Jira tickets.',
+    '<strong>Three pillars of the system</strong>',
+    '<ul><li><strong>Strategy:</strong> Market research, user interviews, competitive audit, north-star metrics, success criteria. We don\'t just ask "what do you want?" — we ask "what outcome changes your business?"</li><li><strong>Design:</strong> Not pixels first. Systems first: design tokens, component library, motion language, accessibility baseline. Then high-fidelity flows validated with real users before a line of production code.</li><li><strong>Engineering:</strong> Type-safe from day one (TypeScript, strict mode). Shared component library with design. CI/CD with preview deployments for every PR. Observability (Sentry, PostHog) baked in, not bolted on.</li></ul>',
+    '<strong>The delivery loop</strong>Two-week sprints with a fixed cadence: Monday planning → Wednesday mid-sprint sync → Friday demo + retro. Stakeholders see working software every Friday. Scope is variable; quality and date are fixed. This creates fewer handoffs, sharper decisions, and a more honest relationship between the idea and the shipped product.',
+    '<strong>When we break the system</strong>Fixed-scope, fixed-date, fixed-budget projects (agency model) force trade-offs we won\'t make. We decline those. We also decline "design-only" or "dev-only" engagements — the magic is in the integration.',
+    '<strong>Results this system produces</strong>Dwell KE: property discovery platform with map search, saved searches, agent dashboards, M-Pesa booking — delivered in 14 weeks. Law firm client: WordPress site with custom legal guide taxonomy, multi-author workflow — delivered in 6 weeks. Both correct decisions, both from the same system.',
+    '<strong>We call it a system because it is repeatable.</strong> Each project is different, but the standards stay high. The team composition flexes, the tools evolve, but the principle — strategy, design, engineering in one conversation — does not change.',
+    '<strong>Want to see how this works for your project?</strong> <a href="/contact">Start a conversation</a> and we\'ll walk you through the approach.',
   ] },
-  { slug: 'lumyn-launches-new-brand-system', type: 'news', title: 'Lumyn launches a new digital brand system', excerpt: 'A sharper visual language for a company building what comes next.', category: 'Company News', date: '2026-09-20', readTime: '2 min read', author: 'Lumyn Technologies', image: '/images/article-grid.svg', content: [
+  { slug: 'lumyn-launches-new-brand-system', type: 'news', title: 'Lumyn launches a new digital brand system', excerpt: 'A sharper visual language for a company building what comes next.', category: 'Company News', date: '2026-09-20', readTime: '2 min read', author: 'Lumyn Technologies', image: '/images/articles/brand-launch-hero.svg', content: [
     'Today we are introducing a new brand system built around clarity, energy, and useful technology.',
     'The system brings our products, studio work, and stories together under one recognizable point of view.',
   ] },
-  { slug: 'lumyn-hosts-builders-night', type: 'news', title: 'Lumyn hosts Nairobi builders night', excerpt: 'Local makers gathered to share ideas, prototypes, and practical lessons from the work.', category: 'Events', date: '2026-09-05', readTime: '2 min read', author: 'Lumyn Technologies', image: '/images/article-grid.svg', content: [
+  { slug: 'lumyn-hosts-builders-night', type: 'news', title: 'Lumyn hosts Nairobi builders night', excerpt: 'Local makers gathered to share ideas, prototypes, and practical lessons from the work.', category: 'Events', date: '2026-09-05', readTime: '2 min read', author: 'Lumyn Technologies', image: '/images/articles/builders-night-hero.svg', content: [
     'Builders Night brought together designers, engineers, founders, and curious minds for an evening of honest conversations.',
     'We left with new questions, new collaborators, and a renewed belief in the power of sharing the work.',
   ] },
-  { slug: 'website-cost-kenya-2026', type: 'article', title: 'How Much Does a Website Cost in Kenya in 2026?', excerpt: 'A realistic breakdown of what Kenyan businesses pay for a website in 2026 — from DIY builders to custom platforms — and what drives the difference.', category: 'Product', date: '2026-09-25', readTime: '7 min read', author: 'Lumyn Studio', image: '/images/article-grid.svg', content: [
+  { slug: 'website-cost-kenya-2026', type: 'article', title: 'How Much Does a Website Cost in Kenya in 2026?', excerpt: 'A realistic breakdown of what Kenyan businesses pay for a website in 2026 — from DIY builders to custom platforms — and what drives the difference.', category: 'Product', date: '2026-09-25', dateModified: '2026-09-28', readTime: '7 min read', author: 'Lumyn Studio', image: '/images/articles/website-cost-hero.svg', cluster: 'kenyan-website-guide', relatedSlugs: ['why-kenyan-business-needs-professional-website-2026', 'custom-website-vs-wordpress-kenya'], faq: [
+    { question: 'What is the cheapest way to get a website in Kenya?', answer: 'DIY builders like Wix or WordPress.com starting at KES 15,000/year. Best for simple brochure sites with 5 pages or fewer.' },
+    { question: 'How much does a custom website cost in Kenya?', answer: 'KES 400,000–2,500,000+ depending on complexity. Agencies charge KES 400K–1.5M; custom platforms (SaaS, marketplaces) start at KES 1.5M.' },
+    { question: 'Are there hidden costs beyond the initial quote?', answer: 'Yes. Domain (KES 2,500–4,000/yr), hosting (KES 3,000–15,000/yr), SSL, professional copy/photos (KES 30K–100K), ongoing SEO/maintenance. Budget 20–30% extra.' },
+    { question: 'Should I hire a freelancer or agency?', answer: 'Freelancers (KES 80K–400K) are cheaper but risk continuity. Agencies (KES 400K–1.5M) provide project management, accountability, and support. Verify portfolio before hiring.' },
+  ], content: [
     'Short answer: anywhere from KES 15,000 for a basic template site to KES 2,500,000+ for a custom enterprise platform. The honest answer is more useful. Here is what actually drives cost in the Kenyan market in 2026.',
     '<strong>The four cost levers.</strong>Every quote you receive breaks down into four things: design complexity, engineering effort, integrations, and ongoing maintenance. A cheap site saves on design and engineering. An expensive one spends on all four — and usually on integrations you did not plan for.',
     '<strong>DIY and template builders: KES 15,000 – 80,000 per year.</strong>Wix, Squarespace, and WordPress.com handle hosting, security, and updates for you. You trade control for speed. This works for a brochure site — five pages, a contact form, a Google map. It stops working when you need M-Pesa payments, a member portal, or a custom admin panel. Budget one to two weeks of your own time to set it up properly.',
@@ -91,7 +171,26 @@ export const content: ContentItem[] = [
     '<strong>How to get a fair quote fast.</strong>Agencies and freelancers price from a brief. Give them: your goals, the pages you need, the integrations you cannot do without, your target launch date, and your budget range. Vague briefs get vague quotes. A specific brief gets you a number you can actually plan around.',
     'The right question is not "how much does a website cost". It is "what do I need the website to do, and what is the cheapest way to get there without owning a liability I cannot operate". If that sounds like your situation, <a href="/contact">start a conversation with our team</a> and we will give you an honest range, not a fantasy.',
   ] },
-  { slug: 'custom-website-vs-wordpress-kenya', type: 'article', title: 'Custom Website vs WordPress: Which Is Right for Your Business?', excerpt: 'WordPress powers 43% of the web, but custom development still wins for specific use cases. A practical decision framework for Kenyan businesses choosing between the two paths.', category: 'Web Development & Technology', date: '2026-09-29', readTime: '9 min read', author: 'Lumyn Engineering', image: '/images/article-grid.svg', content: [
+  { slug: 'custom-website-vs-wordpress-kenya', type: 'article', title: 'Custom Website vs WordPress: Which Is Right for Your Business?', excerpt: 'WordPress powers 43% of the web, but custom development still wins for specific use cases. A practical decision framework for Kenyan businesses choosing between the two paths.', category: 'Web Development & Technology', date: '2026-09-29', readTime: '9 min read', author: 'Lumyn Engineering', image: '/images/articles/wp-vs-custom-hero.svg', cluster: 'kenyan-website-guide', relatedSlugs: ['why-kenyan-business-needs-professional-website-2026', 'website-cost-kenya-2026'], faq: [
+    { question: 'Is WordPress cheaper than custom development?', answer: 'Initially, yes. WordPress sites cost KES 80K–400K vs KES 400K+ for custom. But 3-year TCO often favors custom due to zero plugin licenses, no forced upgrades, and lower maintenance.' },
+    { question: 'Can WordPress handle M-Pesa payments?', answer: 'Yes, via WooCommerce with Pesapal or IntaSend plugins. Works for standard e-commerce. Custom STK Push flows, reconciliation dashboards, or split payments need custom development.' },
+    { question: 'What if I need to scale later?', answer: 'WordPress scales with effort (caching, CDN, database optimization). Custom Next.js/React scales natively on Vercel/Cloudflare. For high-traffic SaaS or marketplaces, custom wins long-term.' },
+    { question: 'Do I own my WordPress site?', answer: 'You own the content and database, but not the platform. Plugin licenses, PHP/MySQL versions, and hosting constraints create vendor lock-in. Custom code gives full IP ownership.' },
+  ], comparisonTable: {
+    caption: 'WordPress vs Custom Development — Kenya 2026 Decision Factors',
+    headers: ['Factor', 'WordPress', 'Custom (Next.js/React)'],
+    rows: [
+      ['Upfront Cost', 'KES 80K–400K', 'KES 400K–2.5M+'],
+      ['3-Year TCO', 'Higher (plugin licenses, hosting, maintenance)', 'Lower (zero license fees, simpler stack)'],
+      ['M-Pesa Integration', 'Via plugins (Pesapal/IntaSend)', 'Native STK Push, custom flows, reconciliation'],
+      ['Performance (TTFB)', '800ms–2s (shared hosting)', '50–150ms (Vercel/Cloudflare edge)'],
+      ['Security Surface', 'High (20–40 plugins avg, 97% vulns from plugins)', 'Minimal (only your code)'],
+      ['Scaling', 'Manual (caching, DB optimization, CDN)', 'Native (edge, serverless, auto-scale)'],
+      ['IP Ownership', 'Platform-dependent', 'Full ownership'],
+      ['Team Required', 'Marketing/Content team', 'Engineering team'],
+      ['Best For', 'Content-led, standard e-commerce, budgets < KES 400K', 'SaaS, marketplaces, complex integrations, high traffic'],
+    ],
+  }, content: [
     'The short answer: WordPress is the right choice for content-led businesses that need editorial control and a vast plugin ecosystem. Custom development wins when you need unique workflows, complex integrations, performance at scale, or full ownership of your technology stack.',
     '<strong>Where WordPress makes sense in Kenya:</strong>',
     '<ul><li>Service businesses (law firms, agencies, consultants) where the site is primarily a brochure + blog + contact form</li><li>Content publishers (news, blogs, media) who need multi-author workflows, scheduling, and taxonomy</li><li>E-commerce stores with standard product catalogs — WooCommerce handles M-Pesa via Pesapal/IntaSend plugins</li><li>Teams with limited technical capacity who need non-developers to update content daily</li><li>Budgets under KES 400,000 where you need maximum features per shilling</li></ul>',
@@ -105,7 +204,13 @@ export const content: ContentItem[] = [
     '<strong>The hybrid path:</strong> Some teams run WordPress for marketing pages (blog, landing pages, SEO content) and a custom Next.js/React app for the authenticated product experience — connected via shared authentication and design system. This works when the marketing velocity and product complexity justify the split.',
     'Still unsure? <a href="/contact">Share your brief</a> and we will map your requirements to the right architecture — no bias toward either stack.',
   ] },
-  { slug: 'state-of-digital-business-kenya-2026', type: 'article', title: 'The State of Digital Business in Kenya in 2026', excerpt: 'Kenya\'s digital economy is maturing fast — mobile money ubiquity, a growing startup ecosystem, and shifting consumer behavior. A data-grounded look at where the market stands and what it means for businesses going digital.', category: 'Kenyan Business & Digital Economy', date: '2026-09-30', readTime: '10 min read', author: 'Lumyn Studio', image: '/images/article-grid.svg', content: [
+  { slug: 'state-of-digital-business-kenya-2026', type: 'article', title: 'The State of Digital Business in Kenya in 2026', excerpt: 'Kenya\'s digital economy is maturing fast — mobile money ubiquity, a growing startup ecosystem, and shifting consumer behavior. A data-grounded look at where the market stands and what it means for businesses going digital.', category: 'Kenyan Business & Digital Economy', date: '2026-09-30', readTime: '10 min read', author: 'Lumyn Studio', image: '/images/articles/kenya-digital-hero.svg', cluster: 'kenyan-digital-economy', relatedSlugs: ['building-digital-products-for-africa', 'why-kenyan-business-needs-professional-website-2026'], faq: [
+    { question: 'What is the internet penetration in Kenya in 2026?', answer: '~45% (23M+ users), growing 6% YoY per CAK 2025 data. Mobile subscriptions exceed 68M (130% penetration, multi-SIM).' },
+    { question: 'Is M-Pesa still the dominant payment method?', answer: 'Yes. 38M+ active users, KES 7.2T+ annual volume (Safaricom FY25). STK Push, B2C, B2B, Express APIs are commoditized — competitive edge is now reconciliation, split payments, cross-border, embedded finance.' },
+    { question: 'What are the biggest digital opportunities in Kenya?', answer: 'Bridging informal-to-formal: 80% of SMEs still run on cash/paper. They need simple, Swahili/Sheng-supported, offline-capable tools for inventory, payments, credit.' },
+    { question: 'How important is WhatsApp Business for Kenyan SMEs?', answer: 'Critical. WhatsApp Business API, Instagram DM automation, TikTok affiliate programs are core sales channels — not afterthoughts. Chat is becoming checkout.' },
+    { question: 'What regulatory changes affect digital businesses?', answer: 'Data Protection Act (2019) enforcement active with ODPC fines. CBK sandbox for fintech. ICTA digital masterplan pushing e-government (eCitizen, NTSA, KRA iTax) — B2G integration increasingly required.' },
+  ], content: [
     'Kenya in 2026 is not "going digital." It is digital. The question is no longer whether your business needs an online presence — it is whether your digital presence is keeping pace with how Kenyans actually buy, sell, and transact today.',
     '<strong>The numbers that matter:</strong>',
     '<ul><li><strong>Internet penetration:</strong> ~45% (23M+ users), growing 6% YoY (CAK 2025)</li><li><strong>Mobile subscriptions:</strong> 68M+ — 130% penetration, multiple SIMs per user</li><li><strong>Smartphone adoption:</strong> ~60% of connections, driven by sub-KES 15,000 devices (Transsion, Xiaomi, Samsung A-series)</li><li><strong>Mobile money:</strong> 38M+ active M-Pesa users, KES 7.2T+ annual volume (Safaricom FY25)</li><li><strong>E-commerce:</strong> Estimated KES 300B+ GMV across formal and informal channels (UNCTAD/KNBS estimates)</li><li><strong>Digital lending:</strong> 15M+ borrowers across M-Shwari, Fuliza, Tala, Branch, Zenka — credit history now digital by default</li></ul>',

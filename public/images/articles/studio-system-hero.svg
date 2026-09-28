@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="600" cy="315" r="140" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.2"/>
+  <circle cx="600" cy="315" r="90" fill="none" stroke="url(#accent)" stroke-width="3" stroke-dasharray="20,10"/>
+  <circle cx="600" cy="315" r="40" fill="url(#accent)"/>
+  <polygon points="600,285 625,305 575,305" fill="#ffffff"/>
+  <polygon points="600,345 625,325 575,325" fill="#ffffff" opacity="0.5"/>
+  <rect x="200" y="275" width="120" height="80" rx="8" fill="#ffffff" opacity="0.1"/>
+  <text x="260" y="320" font-family="Arial" font-size="12" fill="#888" text-anchor="middle">Strategy</text>
+  <rect x="480" y="150" width="120" height="80" rx="8" fill="#ff4d00" opacity="0.2"/>
+  <text x="540" y="195" font-family="Arial" font-size="12" fill="#ff4d00" text-anchor="middle" font-weight="800">Design</text>
+  <rect x="880" y="275" width="120" height="80" rx="8" fill="#ffffff" opacity="0.1"/>
+  <text x="940" y="320" font-family="Arial" font-size="12" fill="#888" text-anchor="middle">Engineering</text>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
+    <text x="600" y="500" font-size="32" fill="url(#accent)">One Room • One Conversation</text>
+    <text x="600" y="540" font-size="18" fill="#888">Strategy + Design + Engineering = Repeatable Delivery</text>
+  </g>
+</svg>

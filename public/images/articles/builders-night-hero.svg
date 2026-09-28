@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="300" cy="350" r="80" fill="url(#accent)" opacity="0.3"/>
+  <circle cx="300" cy="350" r="50" fill="none" stroke="#ff4d00" stroke-width="3"/>
+  <circle cx="300" cy="330" r="15" fill="#ff4d00"/>
+  <ellipse cx="300" cy="410" rx="35" ry="25" fill="#ff4d00"/>
+  <circle cx="600" cy="350" r="80" fill="#ffffff" opacity="0.1"/>
+  <circle cx="600" cy="350" r="50" fill="none" stroke="#ff8c00" stroke-width="3"/>
+  <circle cx="600" cy="330" r="15" fill="#ff8c00"/>
+  <ellipse cx="600" cy="410" rx="35" ry="25" fill="#ff8c00"/>
+  <circle cx="900" cy="350" r="80" fill="url(#accent)" opacity="0.3"/>
+  <circle cx="900" cy="350" r="50" fill="none" stroke="#ff4d00" stroke-width="3"/>
+  <circle cx="900" cy="330" r="15" fill="#ff4d00"/>
+  <ellipse cx="900" cy="410" rx="35" ry="25" fill="#ff4d00"/>
+  <path d="M380 350 Q450 300 520 350" fill="none" stroke="#ff4d00" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M680 350 Q750 300 820 350" fill="none" stroke="#ff8c00" stroke-width="2" stroke-dasharray="5,5"/>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
+    <text x="600" y="120" font-size="36" fill="url(#accent)">Builders Night</text>
+    <text x="600" y="500" font-size="32" fill="#ffffff">Designers • Engineers • Founders</text>
+    <text x="600" y="540" font-size="18" fill="#888">Honest Conversations • New Collaborators • Shared Work</text>
+  </g>
+  <g opacity="0.15">
+    <circle cx="150" cy="150" r="40" fill="#ff4d00"/>
+    <circle cx="1050" cy="480" r="30" fill="#ff8c00"/>
+  </g>
+</svg>

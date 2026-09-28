@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="200" y="200" width="800" height="230" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+  <path d="M300 315 L500 415 L900 215" fill="none" stroke="#ff4d00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="300" cy="315" r="12" fill="#ff4d00"/>
+  <circle cx="500" cy="415" r="12" fill="#ff8c00"/>
+  <circle cx="900" cy="215" r="12" fill="#ff4d00"/>
+  <circle cx="300" cy="315" r="4" fill="#ffffff"/>
+  <circle cx="500" cy="415" r="4" fill="#ffffff"/>
+  <circle cx="900" cy="215" r="4" fill="#ffffff"/>
+  <rect x="300" y="220" width="200" height="80" rx="8" fill="#ffffff" opacity="0.1"/>
+  <rect x="600" y="220" width="200" height="80" rx="8" fill="#ff4d00" opacity="0.2"/>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
+    <text x="600" y="480" font-size="36" fill="url(#accent)">State Machine + Retry + Reconcile</text>
+    <text x="600" y="520" font-size="18" fill="#888">Idempotency • Circuit Breaker • Observability</text>
+  </g>
+  <g opacity="0.15">
+    <rect x="80" y="80" width="50" height="50" rx="8" fill="#ff4d00" transform="rotate(-20 105 105)"/>
+    <rect x="1070" y="500" width="40" height="40" rx="8" fill="#ff8c00" transform="rotate(15 1090 520)"/>
+  </g>
+</svg>

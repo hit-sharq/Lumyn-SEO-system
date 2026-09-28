@@ -4,6 +4,7 @@ import { content, formatDate, getContent } from '@/lib/content'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { ShareButton } from '@/components/share-button'
+import { ArticleContent } from './ArticleContent'
 
 const SITE = 'https://blogs.lumyn.co.ke'
 const MAIN_SITE = 'https://www.lumyn.co.ke'
@@ -25,14 +26,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const OPEN_TAG = String.fromCharCode(60) + 'strong>'
 const CLOSE_TAG = String.fromCharCode(60, 47, 115, 116, 114, 111, 110, 103, 62)
 
-function BodyParagraph({ text }: { text: string }) {
+function BodyParagraph({ text, headingId }: { text: string; headingId?: string }) {
   const idx = text.indexOf(CLOSE_TAG)
   if (text.startsWith(OPEN_TAG) && idx > -1) {
     const heading = text.slice(OPEN_TAG.length, idx)
     const rest = text.slice(idx + CLOSE_TAG.length)
     return (
       <div>
-        <h3 className="article-h3">{heading}</h3>
+        <h3 id={headingId} className="article-h3">{heading}</h3>
         {rest && <p className="article-lead" dangerouslySetInnerHTML={{ __html: rest }} />}
       </div>
     )
@@ -52,7 +53,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     author: { '@type': 'Organization', name: item.author },
     publisher: { '@type': 'Organization', name: 'Lumyn Technologies', logo: { '@type': 'ImageObject', url: `${MAIN_SITE}/favicon-192x192.png` } },
     datePublished: item.date,
-    dateModified: item.date,
+    dateModified: item.dateModified || item.date,
     mainEntityOfPage: url,
     image: `${SITE}${item.image}`,
     articleSection: item.category,
@@ -67,9 +68,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       { '@type': 'ListItem', position: 3, name: item.title, item: url },
     ],
   }
+  const faqLd = item.faq ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: item.faq.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.answer },
+    })),
+  } : null
   return <SiteShell><main className="article-page wrap">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+    {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
     <Link href="/articles" className="back-link"><ArrowLeft size={16} /> Back to articles</Link>
     <div className="article-header">
       <span className="section-label">{item.category} / {formatDate(item.date)}</span>
@@ -78,9 +89,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <div className="byline"><span>By {item.author}</span><span>{item.readTime}</span><ShareButton url={url} title={item.title} /></div>
     </div>
     <img className="article-hero" src={item.image} alt={item.title} />
-    <div className="article-body">{item.content.map((paragraph, i) => <BodyParagraph key={i} text={paragraph} />)}
-      <h2>Build what comes next</h2>
-      <p>Want to explore what these ideas could mean for your business? <Link href="/contact">Start a conversation with our team.</Link></p>
-    </div>
+    <ArticleContent item={item} />
   </main></SiteShell>
 }

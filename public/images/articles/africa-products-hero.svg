@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <path d="M150 450 Q300 200 600 315 T1050 450" fill="none" stroke="url(#accent)" stroke-width="4" stroke-dasharray="10,5"/>
+  <circle cx="150" cy="450" r="20" fill="#ff4d00"/>
+  <circle cx="600" cy="315" r="20" fill="#ff8c00"/>
+  <circle cx="1050" cy="450" r="20" fill="#ff4d00"/>
+  <circle cx="150" cy="450" r="8" fill="#ffffff"/>
+  <circle cx="600" cy="315" r="8" fill="#ffffff"/>
+  <circle cx="1050" cy="450" r="8" fill="#ffffff"/>
+  <rect x="120" y="360" width="60" height="80" rx="4" fill="url(#accent)" opacity="0.3"/>
+  <rect x="570" y="225" width="60" height="80" rx="4" fill="#ffffff" opacity="0.2"/>
+  <rect x="1020" y="360" width="60" height="80" rx="4" fill="#ff8c00" opacity="0.3"/>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
+    <text x="600" y="120" font-size="36" fill="url(#accent)">Design for Reality</text>
+    <text x="600" y="550" font-size="20" fill="#888">Infrastructure as Constraint • Native Payments • Local Partnerships</text>
+  </g>
+  <g opacity="0.15">
+    <circle cx="100" cy="100" r="50" fill="#ff4d00"/>
+    <circle cx="1100" cy="530" r="40" fill="#ff8c00"/>
+  </g>
+</svg>
