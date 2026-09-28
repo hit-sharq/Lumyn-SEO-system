@@ -10,22 +10,14 @@ export const metadata: Metadata = {
   openGraph: { title: 'Lumyn Technologies | Building Tomorrow’s Technology', description: 'Digital products and platforms for businesses ready to move faster than their market.', url: 'https://lumyn.co.ke', siteName: 'Lumyn Technologies', type: 'website' },
   twitter: { card: 'summary_large_image', title: 'Lumyn Technologies', description: 'Building tomorrow’s technology.' },
   generator: 'Next.js',
+  manifest: '/site.webmanifest',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/apple-icon.png',
+    apple: '/apple-touch-icon.png',
   },
 }
 
