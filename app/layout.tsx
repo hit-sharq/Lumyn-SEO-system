@@ -47,10 +47,9 @@ export default function RootLayout({
   }
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
-      </head>
+      <head />
       <body className="antialiased" suppressHydrationWarning>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} suppressHydrationWarning={false} />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
