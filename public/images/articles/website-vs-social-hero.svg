@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="120" y="160" width="440" height="310" rx="12" fill="#ffffff" opacity="0.1"/>
+  <text x="340" y="250" font-family="Arial" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">SOCIAL</text>
+  <text x="340" y="290" font-family="Arial" font-size="15" fill="#888" text-anchor="middle">Attention you rent</text>
+  <text x="340" y="330" font-family="Arial" font-size="15" fill="#888" text-anchor="middle">Algorithm decides reach</text>
+  <text x="340" y="370" font-family="Arial" font-size="15" fill="#888" text-anchor="middle">No search visibility</text>
+  <text x="340" y="430" font-family="Arial" font-size="22" font-weight="800" fill="#ff8c00" text-anchor="middle">DEMAND</text>
+  <rect x="640" y="160" width="440" height="310" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+  <text x="860" y="250" font-family="Arial" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">WEBSITE</text>
+  <text x="860" y="290" font-family="Arial" font-size="15" fill="#cccccc" text-anchor="middle">Asset you own</text>
+  <text x="860" y="330" font-family="Arial" font-size="15" fill="#cccccc" text-anchor="middle">Ranks, converts, proves</text>
+  <text x="860" y="370" font-family="Arial" font-size="15" fill="#cccccc" text-anchor="middle">Takes M-Pesa payments</text>
+  <text x="860" y="430" font-family="Arial" font-size="22" font-weight="800" fill="#ff4d00" text-anchor="middle">CONVERSION</text>
+  <rect x="545" y="280" width="110" height="70" rx="35" fill="url(#accent)"/>
+  <text x="600" y="325" font-family="Arial" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">BOTH</text>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
+    <text x="600" y="545" font-size="32" fill="url(#accent)">Attention Converts Here</text>
+    <text x="600" y="585" font-size="18" fill="#888">The Order That Works • When Social Is Enough • When It Costs You</text>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="150" y="150" width="900" height="330" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+  <rect x="190" y="195" width="240" height="240" rx="8" fill="url(#accent)" opacity="0.2"/>
+  <text x="310" y="290" font-family="Arial" font-size="56" font-weight="800" fill="#ff4d00" text-anchor="middle">9</text>
+  <text x="310" y="330" font-family="Arial" font-size="15" fill="#ffffff" text-anchor="middle">Questions</text>
+  <text x="310" y="355" font-family="Arial" font-size="15" fill="#888" text-anchor="middle">Before You Sign</text>
+  <rect x="460" y="195" width="240" height="240" rx="8" fill="#ffffff" opacity="0.1"/>
+  <text x="580" y="290" font-family="Arial" font-size="44" font-weight="800" fill="#ff8c00" text-anchor="middle">7</text>
+  <text x="580" y="330" font-family="Arial" font-size="15" fill="#ffffff" text-anchor="middle">Contract Clauses</text>
+  <text x="580" y="355" font-family="Arial" font-size="15" fill="#888" text-anchor="middle">Ownership &amp; Exit</text>
+  <rect x="730" y="195" width="240" height="240" rx="8" fill="#ff4d00" opacity="0.15"/>
+  <text x="850" y="290" font-family="Arial" font-size="34" font-weight="800" fill="#ffffff" text-anchor="middle">40%</text>
+  <text x="850" y="330" font-family="Arial" font-size="15" fill="#ffffff" text-anchor="middle">Max Upfront</text>
+  <text x="850" y="355" font-family="Arial" font-size="15" fill="#888" text-anchor="middle">Milestones, Not Handover</text>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
+    <text x="600" y="530" font-size="32" fill="url(#accent)">Choose the Capability, Not the Quote</text>
+    <text x="600" y="570" font-size="18" fill="#888">Kenya Market Ranges • Red Flags • Real Handovers</text>
+  </g>
+</svg>

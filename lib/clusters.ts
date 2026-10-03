@@ -32,6 +32,9 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       'why-kenyan-business-needs-professional-website-2026',
       'website-cost-kenya-2026',
       'custom-website-vs-wordpress-kenya',
+      'how-to-choose-web-development-company-kenya',
+      'website-vs-social-media-kenya',
+      '10-features-every-business-website-should-have',
     ],
   },
   'seo-foundations': {
@@ -100,43 +103,14 @@ export type PlannedArticle = {
 }
 
 export const ROADMAP: PlannedArticle[] = [
-  // --- Batch 1: website cluster, highest commercial intent ---
-  {
-    slug: 'how-to-choose-web-development-company-kenya',
-    title: 'How to Choose a Web Development Company in Kenya',
-    cluster: 'business-website',
-    purpose: 'Highest-intent conversion article. Everything in the cluster funnels here.',
-    docRef: 'priority #3',
-    priority: 1,
-    linksTo: ['website-cost-kenya-2026', 'custom-website-vs-wordpress-kenya'],
-  },
-  {
-    slug: 'website-vs-social-media-kenya',
-    title: 'Website vs Social Media: What Does Your Business Actually Need?',
-    cluster: 'business-website',
-    purpose: 'Counter-argument to the live "why you need a website" article. Answers the when, not the whether.',
-    docRef: 'priority #4',
-    priority: 2,
-    linksTo: ['why-kenyan-business-needs-professional-website-2026'],
-  },
-  {
-    slug: '10-features-every-business-website-should-have',
-    title: '10 Features Every Modern Business Website Should Have',
-    cluster: 'business-website',
-    purpose: 'Listicle that links naturally into cost, necessity and M-Pesa integration.',
-    docRef: 'priority #14',
-    priority: 3,
-    linksTo: ['website-cost-kenya-2026', 'mpesa-integration-lessons'],
-  },
-
-  // --- Batch 2: SEO cluster, Lumyn's own expertise ---
+  // --- Batch 1: SEO cluster, Lumyn's own expertise ---
   {
     slug: 'seo-for-kenyan-businesses-beginners-guide',
     title: "SEO for Kenyan Businesses: A Practical Beginner's Guide",
     cluster: 'seo-foundations',
     purpose: 'Pillar for the SEO cluster. Target the beginner who cannot yet name what SEO is.',
     docRef: 'priority #5',
-    priority: 4,
+    priority: 1,
   },
   {
     slug: 'get-your-business-on-google-kenya',
@@ -144,18 +118,18 @@ export const ROADMAP: PlannedArticle[] = [
     cluster: 'seo-foundations',
     purpose: 'Local search and Google Business Profile. Ties directly to service enquiries.',
     docRef: 'priority #6',
-    priority: 5,
+    priority: 2,
     linksTo: ['seo-for-kenyan-businesses-beginners-guide'],
   },
 
-  // --- Batch 3: case studies, trust ---
+  // --- Batch 2: case studies, trust ---
   {
     slug: 'why-we-built-enkaji',
     title: 'Why We Built Enkaji: Building a B2B Marketplace for Kenya',
     cluster: 'lumyn-case-studies',
     purpose: 'First case study. Use the section 8 framework already defined in the strategy doc.',
     docRef: 'priority #11',
-    priority: 6,
+    priority: 3,
   },
   {
     slug: 'why-we-built-dwell-ke',
@@ -163,10 +137,10 @@ export const ROADMAP: PlannedArticle[] = [
     cluster: 'lumyn-case-studies',
     purpose: 'PropTech case study. Contrasts with Enkaji to show range.',
     docRef: 'priority #12',
-    priority: 7,
+    priority: 4,
   },
 
-  // --- Batch 4: cost consolidation (see notes below) ---
+  // --- Batch 3: cost consolidation (see notes below) ---
   {
     slug: 'custom-software-development-cost-kenya',
     title: 'How Much Does Custom Software Development Cost in Kenya?',
@@ -174,18 +148,18 @@ export const ROADMAP: PlannedArticle[] = [
     purpose:
       'Single pillar covering custom software, e-commerce, web app and mobile app pricing as sections. Replaces four separate cost articles from doc section 9 that would otherwise cannibalise each other.',
     docRef: 'priority #8 + doc s9 siblings',
-    priority: 8,
+    priority: 5,
     linksTo: ['website-cost-kenya-2026'],
   },
 
-  // --- Batch 5: remaining priority items ---
+  // --- Batch 4: remaining priority items ---
   {
     slug: 'mpesa-changing-ecommerce-kenya',
     title: 'How M-Pesa Is Changing E-Commerce in Kenya',
     cluster: 'kenya-digital-economy',
     purpose: 'Local authority. Supports the payments expertise shown in the M-Pesa lessons article.',
     docRef: 'priority #10',
-    priority: 9,
+    priority: 6,
     linksTo: ['mpesa-integration-lessons'],
   },
   {
@@ -194,7 +168,7 @@ export const ROADMAP: PlannedArticle[] = [
     cluster: 'business-website',
     purpose: 'Commercial. Sits naturally between the cost and choose-a-company articles.',
     docRef: 'priority #15',
-    priority: 10,
+    priority: 7,
     linksTo: ['custom-website-vs-wordpress-kenya', 'how-to-choose-web-development-company-kenya'],
   },
 ]
