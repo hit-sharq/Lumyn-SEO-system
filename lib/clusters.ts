@@ -40,10 +40,10 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
   'seo-foundations': {
     id: 'seo-foundations',
     name: 'SEO Foundations',
-    pillar: null,
+    pillar: 'seo-for-kenyan-businesses-beginners-guide',
     description: 'Search visibility fundamentals for Kenyan businesses and the teams that serve them.',
     intent: 'informational',
-    members: ['how-ai-transforming-seo-2026'],
+    members: ['seo-for-kenyan-businesses-beginners-guide', 'how-ai-transforming-seo-2026'],
   },
   'kenya-digital-economy': {
     id: 'kenya-digital-economy',

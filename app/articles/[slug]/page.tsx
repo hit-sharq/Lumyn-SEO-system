@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!item) return { title: 'Article | Lumyn' }
   const url = `${SITE}/articles/${item.slug}`
   return {
-    title: `${item.title} | Lumyn Technologies Blog`,
+    title: item.title,
     description: item.excerpt,
     openGraph: { title: item.title, description: item.excerpt, url, type: 'article', siteName: 'Lumyn Technologies Blog', publishedTime: item.date, authors: [item.author], section: item.category },
     twitter: { card: 'summary_large_image', title: item.title, description: item.excerpt },
