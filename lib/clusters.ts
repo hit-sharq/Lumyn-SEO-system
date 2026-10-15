@@ -171,6 +171,93 @@ export const ROADMAP: PlannedArticle[] = [
     priority: 7,
     linksTo: ['custom-website-vs-wordpress-kenya', 'how-to-choose-web-development-company-kenya'],
   },
+
+  // --- Batch 5: Ads & paid acquisition (new from user request) ---
+  {
+    slug: 'facebook-instagram-advertising-cost-kenya-2026',
+    title: 'How Much Does Facebook and Instagram Advertising Cost in Kenya (2026)',
+    cluster: 'seo-foundations',
+    purpose: 'Paid acquisition cost transparency. Complements SEO cluster with Meta Ads pricing reality.',
+    docRef: 'user-request',
+    priority: 8,
+    linksTo: ['meta-ads-vs-google-ads-kenya', 'how-to-measure-ads-working-kenya'],
+  },
+  {
+    slug: 'google-ads-small-business-kenya-beginners-guide',
+    title: 'How to Run Google Ads for a Small Business in Kenya: Beginner\'s Guide',
+    cluster: 'seo-foundations',
+    purpose: 'Practical Google Ads setup for Kenyan SMEs. Fills the paid-search gap in the SEO cluster.',
+    docRef: 'user-request',
+    priority: 9,
+    linksTo: ['seo-for-kenyan-businesses-beginners-guide', 'meta-ads-vs-google-ads-kenya'],
+  },
+  {
+    slug: 'meta-ads-vs-google-ads-kenya',
+    title: 'Meta Ads vs Google Ads: Which Is Better for Kenyan Businesses?',
+    cluster: 'seo-foundations',
+    purpose: 'Decision framework comparing the two main paid channels for local businesses.',
+    docRef: 'user-request',
+    priority: 10,
+    linksTo: ['facebook-instagram-advertising-cost-kenya-2026', 'google-ads-small-business-kenya-beginners-guide'],
+  },
+  {
+    slug: 'how-to-measure-ads-working-kenya',
+    title: 'How to Measure Whether Your Ads Are Actually Working (Without Being a Marketer)',
+    cluster: 'seo-foundations',
+    purpose: 'Attribution basics for non-technical founders. Connects ad spend to business outcomes.',
+    docRef: 'user-request',
+    priority: 11,
+    linksTo: ['google-ads-small-business-kenya-beginners-guide', 'meta-ads-vs-google-ads-kenya'],
+  },
+
+  // --- Batch 6: M-Pesa & payments practical guides ---
+  {
+    slug: 'accept-mpesa-payments-website-kenya',
+    title: 'How to Accept M-Pesa Payments on Your Website in Kenya',
+    cluster: 'kenya-digital-economy',
+    purpose: 'Step-by-step integration guide. Extends the M-Pesa lessons article into implementation.',
+    docRef: 'user-request',
+    priority: 12,
+    linksTo: ['mpesa-integration-lessons', 'paybill-vs-till-number-kenya'],
+  },
+  {
+    slug: 'paybill-vs-till-number-kenya',
+    title: 'Paybill vs Till Number: Which Should Your Business Use?',
+    cluster: 'kenya-digital-economy',
+    purpose: 'Decision guide for M-Pesa merchant account types. High-intent commercial query.',
+    docRef: 'user-request',
+    priority: 13,
+    linksTo: ['accept-mpesa-payments-website-kenya', 'mpesa-integration-lessons'],
+  },
+  {
+    slug: 'spot-fake-websites-mpesa-scams-kenya',
+    title: 'How to Spot Fake Websites and M-Pesa Scams Before You Pay',
+    cluster: 'kenya-digital-economy',
+    purpose: 'Trust & safety content. Addresses the 40% YoY fraud rise cited in state-of-digital-business.',
+    docRef: 'user-request',
+    priority: 14,
+    linksTo: ['state-of-digital-business-kenya-2026', 'accept-mpesa-payments-website-kenya'],
+  },
+
+  // --- Batch 7: Business website practical guides ---
+  {
+    slug: 'why-website-when-you-have-whatsapp-kenya',
+    title: 'Why Your Business Needs a Website When You Already Have WhatsApp',
+    cluster: 'business-website',
+    purpose: 'Direct rebuttal to the common objection. Extends website-vs-social-media-kenya.',
+    docRef: 'user-request',
+    priority: 15,
+    linksTo: ['website-vs-social-media-kenya', 'why-kenyan-business-needs-professional-website-2026'],
+  },
+  {
+    slug: 'professional-email-domain-kenya',
+    title: 'How to Get a Professional Email With Your Own Domain in Kenya',
+    cluster: 'business-website',
+    purpose: 'Low-effort credibility signal. Practical setup guide for Google Workspace/Zoho/Outlook.',
+    docRef: 'user-request',
+    priority: 16,
+    linksTo: ['why-kenyan-business-needs-professional-website-2026', '10-features-every-business-website-should-have'],
+  },
 ]
 
 /**
