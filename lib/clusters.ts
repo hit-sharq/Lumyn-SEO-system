@@ -43,7 +43,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
     pillar: 'seo-for-kenyan-businesses-beginners-guide',
     description: 'Search visibility fundamentals for Kenyan businesses and the teams that serve them.',
     intent: 'informational',
-    members: ['seo-for-kenyan-businesses-beginners-guide', 'how-ai-transforming-seo-2026'],
+    members: ['seo-for-kenyan-businesses-beginners-guide', 'get-your-business-on-google-kenya', 'how-ai-transforming-seo-2026'],
   },
   'kenya-digital-economy': {
     id: 'kenya-digital-economy',
@@ -60,10 +60,10 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
   'lumyn-case-studies': {
     id: 'lumyn-case-studies',
     name: 'Lumyn Case Studies',
-    pillar: null,
+    pillar: 'why-we-built-enkaji',
     description: 'Project stories and post-mortems. Highest trust value per word, weakest search volume.',
     intent: 'brand',
-    members: [],
+    members: ['why-we-built-enkaji', 'why-we-built-dwell-ke'],
   },
   'studio-process': {
     id: 'studio-process',
