@@ -35,6 +35,8 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       'how-to-choose-web-development-company-kenya',
       'website-vs-social-media-kenya',
       '10-features-every-business-website-should-have',
+      'wordpress-vs-laravel-vs-nextjs-kenya',
+      'php-8-upgrade-guide-kenya-wordpress',
     ],
   },
   'seo-foundations': {
@@ -76,10 +78,10 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
   'engineering-deep-dives': {
     id: 'engineering-deep-dives',
     name: 'Engineering Deep Dives',
-    pillar: null,
+    pillar: 'is-php-dead-2026-kenya',
     description: 'Technical authority content that demonstrates engineering credibility.',
     intent: 'informational',
-    members: [],
+    members: ['is-php-dead-2026-kenya'],
   },
 }
 
