@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
+import { SiteShell } from '@/components/site-shell'
 
 
 
@@ -16,8 +17,8 @@ const sponsored = [
 
 export default function AdvertisePage() {
   return (
-    <div>
-      <main className="section wrap" id="advertise">
+    <SiteShell>
+      <main className="section wrap" id="advertise" suppressHydrationWarning>
         <div className="section-heading">
           <div>
             <span className="section-label">Sponsored content</span>
@@ -80,6 +81,6 @@ export default function AdvertisePage() {
         <p>Send your topic idea, format, target publish date, and budget to <a href="mailto:ads@lumyn.co.ke">ads@lumyn.co.ke</a>. We reply within three business days.</p>
         <Link href="/contact" className="button button-dark">Start a conversation</Link>
       </main>
-    </div>
+    </SiteShell>
   )
 }
