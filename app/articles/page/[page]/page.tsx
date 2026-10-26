@@ -1,6 +1,7 @@
 import { SiteShell } from '@/components/site-shell'
 import { ContentCard } from '@/components/content-card'
 import { articles } from '@/lib/content'
+const organicArticles = articles.filter((a) => !a.sponsored)
 import { paginate, getTotalPages, getPaginationData, ITEMS_PER_PAGE } from '@/lib/pagination'
 
 const SITE = 'https://blogs.lumyn.co.ke'
@@ -17,17 +18,17 @@ interface ArticlesPageProps {
 }
 
 export async function generateStaticParams() {
-  const totalPages = getTotalPages(articles.length)
+  const totalPages = getTotalPages(organicArticles.length)
   return Array.from({ length: totalPages }, (_, i) => ({ page: String(i + 1) }))
 }
 
 export default async function ArticlesPage({ params }: ArticlesPageProps) {
   const resolvedParams = await params
   const page = Number(resolvedParams.page) || 1
-  const totalPages = getTotalPages(articles.length)
+  const totalPages = getTotalPages(organicArticles.length)
   const currentPage = Math.min(Math.max(1, page), totalPages)
   
-  const paginatedArticles = paginate(articles, currentPage)
+  const paginatedArticles = paginate(organicArticles, currentPage)
   const pagination = getPaginationData(currentPage, totalPages)
   
   const breadcrumbLd = {

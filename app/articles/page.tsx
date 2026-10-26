@@ -1,6 +1,7 @@
 import { SiteShell } from '@/components/site-shell'
 import { ContentCard } from '@/components/content-card'
 import { articles } from '@/lib/content'
+const organicArticles = articles.filter((a) => !a.sponsored)
 import { paginate, getTotalPages, getPaginationData, ITEMS_PER_PAGE } from '@/lib/pagination'
 
 const SITE = 'https://blogs.lumyn.co.ke'
@@ -13,8 +14,8 @@ export const metadata = {
 }
 
 const currentPage = 1
-const totalPages = getTotalPages(articles.length)
-const paginatedArticles = paginate(articles, currentPage)
+const totalPages = getTotalPages(organicArticles.length)
+const paginatedArticles = paginate(organicArticles, currentPage)
 const pagination = getPaginationData(currentPage, totalPages)
 
 const breadcrumbLd = {
@@ -31,7 +32,7 @@ const blogLd = {
   name: 'Lumyn Technologies Blog',
   url: SITE,
   description: 'Practical perspectives on product, engineering, design, and digital growth from Lumyn Technologies.',
-  blogPosts: articles.map(item => ({
+  blogPosts: organicArticles.map(item => ({
     '@type': 'BlogPosting',
     headline: item.title,
     url: `${SITE}/articles/${item.slug}`,
@@ -53,7 +54,7 @@ export default function ArticlesPage() {
           <p>Practical perspectives from the people building digital products, platforms, and experiences at Lumyn.</p>
         </div>
         <div className="listing-bar">
-          <span>{articles.length} stories</span>
+          <span>{organicArticles.length} stories</span>
           <span>Product · Engineering · Studio</span>
         </div>
         <div className="card-grid">

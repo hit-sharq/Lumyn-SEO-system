@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteUrl}/${item.type === 'article' ? 'articles' : 'news'}/${item.slug}`,
     lastModified: new Date(item.date),
     changeFrequency: 'monthly',
-    priority: 0.7,
+    priority: item.sponsored ? 0.4 : 0.7,
   }))
 
   return [...staticRoutes, ...contentRoutes]

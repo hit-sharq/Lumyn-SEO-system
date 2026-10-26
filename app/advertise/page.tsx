@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { SiteShell } from '@/components/site-shell'
+import { content } from '@/lib/content'
+import { ContentCard } from '@/components/content-card'
 
 export const metadata = {
   title: 'Advertise on the Lumyn Blog | Sponsored Content',
@@ -56,7 +58,17 @@ export default function AdvertisePage() {
           <li>Lumyn edits for clarity and may decline a submission at its discretion.</li>
         </ul>
 
-        <div className="section-heading">
+        <div className="section-heading" style={{ marginTop: 60 }}>
+          <div>
+            <span className="section-label">Published sponsored content</span>
+            <h2>Recent sponsored articles</h2>
+          </div>
+        </div>
+        <div className="card-grid">
+          {content.filter((a) => a.sponsored).map((item) => <ContentCard key={item.slug} item={item} />)}
+        </div>
+
+        <div className="section-heading" style={{ marginTop: 60 }}>
           <div>
             <span className="section-label">Get in touch</span>
             <h2>Submit a proposal</h2>

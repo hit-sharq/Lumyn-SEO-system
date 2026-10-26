@@ -5,7 +5,7 @@ import { ContentCard } from '@/components/content-card'
 import { articles } from '@/lib/content'
 
 export default function Page() {
-  const insights = articles.filter((a) => a.type === 'article')
+  const insights = articles.filter((a) => a.type === 'article' && !a.sponsored)
   const caseStudies = articles.filter((a) => a.cluster === 'lumyn-case-studies')
   const caps = [
     { n: '01', t: 'Discover', d: 'We learn how your business works, where it is going, and what your customers need next.' },

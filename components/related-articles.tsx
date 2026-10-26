@@ -18,6 +18,7 @@ export function RelatedArticles({ currentSlug, currentCluster, currentRelatedSlu
     ? content.filter(
         (item) =>
           item.type === 'article' &&
+          !item.sponsored &&
           item.cluster === currentCluster &&
           item.slug !== currentSlug &&
           !currentRelatedSlugs.includes(item.slug)
