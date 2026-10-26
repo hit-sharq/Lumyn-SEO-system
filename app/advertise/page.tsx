@@ -3,11 +3,12 @@ import { ArrowUpRight } from 'lucide-react'
 import { SiteShell } from '@/components/site-shell'
 import { content } from '@/lib/content'
 
-
 export const metadata = {
   title: 'Advertise on the Lumyn Blog | Sponsored Content',
   description: 'Reach Kenyan business and technology readers with sponsored articles on blogs.lumyn.co.ke. Rates, guidelines, and submission details.',
 }
+
+const sponsored = content.filter((a) => a.sponsored)
 
 export default function AdvertisePage() {
   return (
@@ -30,7 +31,7 @@ export default function AdvertisePage() {
           <div className="cap-item">
             <span className="cap-num">1</span>
             <h3>Sponsored article</h3>
-            <p>A 800–1,200 word feature on your topic, labeled “Sponsored,” with one followed mention of your brand replaced by a nofollow link. From KES 60,000.</p>
+            <p>A 800-1200 word feature on your topic, labeled Sponsored, with one followed mention of your brand replaced by a nofollow link. From KES 60,000.</p>
           </div>
           <div className="cap-item">
             <span className="cap-num">2</span>
@@ -40,45 +41,53 @@ export default function AdvertisePage() {
           <div className="cap-item">
             <span className="cap-num">3</span>
             <h3>Banner placement</h3>
-            <p>Homepage or article-page banner for one month. From KES 40,000/month.</p>
+            <p>Homepage or article-page banner for one month. From KES 40,000 per month.</p>
           </div>
         </div>
 
-        <div className="section-heading" style={{ marginTop: 60 }}>
+        <div className="section-heading">
           <div>
             <span className="section-label">Editorial guidelines</span>
             <h2>What we accept</h2>
           </div>
         </div>
-        <ul style={{ marginBottom: 30 }}>
+        <ul>
           <li>Topic must serve Kenyan businesses: tech, web, SEO, payments (M-Pesa), operations, or startup growth.</li>
           <li>Original, unpublished content. AI-only drafts are rejected.</li>
-          <li>Sponsored posts carry a “Sponsored” banner; outbound links use <code>rel="nofollow sponsored"</code>.</li>
+          <li>Sponsored posts carry a Sponsored banner; outbound links use rel nofollow sponsored.</li>
           <li>No casino, gambling, betting, crypto, adult, or payday-lending placement.</li>
           <li>Lumyn edits for clarity and may decline a submission at its discretion.</li>
         </ul>
 
-        <div className="section-heading" style={{ marginTop: 60 }}>
+        <div className="section-heading">
           <div>
             <span className="section-label">Published sponsored content</span>
             <h2>Recent sponsored articles</h2>
           </div>
         </div>
         <div className="card-grid">
-          {content.filter((a) => a.sponsored).map((item) => (
-            <a key={item.slug} href={`/articles/${item.slug}`} className="content-card" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div className="card-image"><img src={item.image} alt={item.title} /><span className="card-index">SPONSORED</span></div>
+          {sponsored.map((item) => (
+            <a key={item.slug} href={`/articles/${item.slug}`} className="content-card">
+              <div className="card-image">
+                <img src={item.image} alt={item.title} />
+                <span className="card-index">SPONSORED</span>
+              </div>
               <div className="card-body">
-                <div className="card-meta"><span>{item.category}</span><span>{item.date}</span></div>
+                <div className="card-meta">
+                  <span>{item.category}</span>
+                  <span>{item.date}</span>
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.excerpt}</p>
-                <div className="card-footer"><span className="text-link">Read more →</span></div>
+                <div className="card-footer">
+                  <span className="text-link">Read more</span>
+                </div>
               </div>
             </a>
           ))}
         </div>
 
-        <div className="section-heading" style={{ marginTop: 60 }}>
+        <div className="section-heading">
           <div>
             <span className="section-label">Get in touch</span>
             <h2>Submit a proposal</h2>
