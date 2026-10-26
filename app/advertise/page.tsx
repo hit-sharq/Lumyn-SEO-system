@@ -1,5 +1,3 @@
-
-import { ArrowUpRight } from 'lucide-react'
 import { SiteShell } from '@/components/site-shell'
 
 export const metadata = {
@@ -16,7 +14,7 @@ const sponsored = [
 export default function AdvertisePage() {
   return (
     <SiteShell>
-      <main className="section wrap" id="advertise" suppressHydrationWarning>
+      <main className="section wrap" id="advertise">
         <div className="section-heading">
           <div>
             <span className="section-label">Sponsored content</span>
@@ -54,7 +52,13 @@ export default function AdvertisePage() {
             <h2>What we accept</h2>
           </div>
         </div>
-        <p>Guidelines temporarily removed for debugging.</p>
+        <ul>
+          <li>Topic must serve Kenyan businesses: tech, web, SEO, payments (M-Pesa), operations, or startup growth.</li>
+          <li>Original, unpublished content. AI-only drafts are rejected.</li>
+          <li>Sponsored posts carry a Sponsored banner; outbound links use rel nofollow sponsored.</li>
+          <li>No casino, gambling, betting, crypto, adult, or payday-lending placement.</li>
+          <li>Lumyn edits for clarity and may decline a submission at its discretion.</li>
+        </ul>
 
         <div className="section-heading">
           <div>
