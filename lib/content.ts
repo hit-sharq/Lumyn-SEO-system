@@ -52,6 +52,10 @@ export type ContentItem = {
     rows: (string | { value: string; highlight?: boolean })[][]
     caption?: string
   }
+  /** When true, the article is paid placement. Disclosure + nofollow sponsored links apply. */
+  sponsored?: boolean
+  /** Sponsor details shown in the disclosure banner. */
+  sponsor?: { name: string; url: string }
 }
 
 export const content: ContentItem[] = [
