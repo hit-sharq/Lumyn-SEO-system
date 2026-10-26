@@ -66,7 +66,6 @@ export default function AdvertisePage() {
           {sponsored.map((item) => (
             <a key={item.slug} href={`/articles/${item.slug}`} className="content-card">
               <div className="card-image">
-                <img src={item.image} alt={item.title} />
                 <span className="card-index">SPONSORED</span>
               </div>
               <div className="card-body">
