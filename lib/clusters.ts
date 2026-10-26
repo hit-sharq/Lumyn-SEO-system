@@ -38,6 +38,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       'wordpress-vs-laravel-vs-nextjs-kenya',
       'php-8-upgrade-guide-kenya-wordpress',
       'business-banking-kenya-sme-2026',
+      'crypto-law-kenya-business-guide',
     ],
   },
   'seo-foundations': {
