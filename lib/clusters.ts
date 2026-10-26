@@ -37,6 +37,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       '10-features-every-business-website-should-have',
       'wordpress-vs-laravel-vs-nextjs-kenya',
       'php-8-upgrade-guide-kenya-wordpress',
+      'business-banking-kenya-sme-2026',
     ],
   },
   'seo-foundations': {
