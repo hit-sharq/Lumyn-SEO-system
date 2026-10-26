@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import { SiteShell } from '@/components/site-shell'
+
 
 
 export const metadata = {
@@ -16,7 +16,7 @@ const sponsored = [
 
 export default function AdvertisePage() {
   return (
-    <SiteShell>
+    <div>
       <main className="section wrap" id="advertise">
         <div className="section-heading">
           <div>
@@ -80,6 +80,6 @@ export default function AdvertisePage() {
         <p>Send your topic idea, format, target publish date, and budget to <a href="mailto:ads@lumyn.co.ke">ads@lumyn.co.ke</a>. We reply within three business days.</p>
         <Link href="/contact" className="button button-dark">Start a conversation</Link>
       </main>
-    </SiteShell>
+    </div>
   )
 }
