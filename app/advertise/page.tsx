@@ -1,14 +1,18 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { SiteShell } from '@/components/site-shell'
-import { content } from '@/lib/content'
+
 
 export const metadata = {
   title: 'Advertise on the Lumyn Blog | Sponsored Content',
   description: 'Reach Kenyan business and technology readers with sponsored articles on blogs.lumyn.co.ke. Rates, guidelines, and submission details.',
 }
 
-const sponsored = content.filter((a) => a.sponsored)
+const sponsored = [
+  { slug: 'crypto-law-kenya-business-guide', title: 'Crypto and Digital Currency Law in Kenya: What Businesses Need to Know in 2026', excerpt: 'Kenya has no dedicated crypto statute, yet businesses are already using digital assets. A practical guide to the legal landscape.', category: 'Legal & Compliance', date: '2026-10-26', image: '/images/articles/crypto-law-kenya-hero.svg' },
+  { slug: 'business-banking-kenya-sme-2026', title: 'Business Banking for Kenyan SMEs: What Actually Matters in 2026', excerpt: 'A practical look at business accounts, M-Pesa integration, and borrowing for Kenyan small businesses.', category: 'Business & Finance', date: '2026-10-26', image: '/images/articles/business-banking-kenya-hero.svg' },
+  { slug: 'pakakumi-kenya-crash-game-platform', title: "Pakakumi: Kenya's Crash Game and Sports Betting Platform Explained", excerpt: 'How Pakakumi works - crash games, sports betting, M-Pesa deposits, and BCLB licensing.', category: 'Sponsored', date: '2026-10-26', image: '/images/articles/pakakumi-sponsored-hero.svg' },
+]
 
 export default function AdvertisePage() {
   return (
