@@ -90,7 +90,7 @@ export default function AdvertisePage() {
           </div>
         </div>
         <p>Send your topic idea, format, target publish date, and budget to <a href="mailto:ads@lumyn.co.ke">ads@lumyn.co.ke</a>. We reply within three business days.</p>
-        <Link href="/contact" className="button button-dark">Start a conversation <ArrowUpRight size={16} /></Link>
+        <a href="/contact" className="button button-dark">Start a conversation</a>
       </main>
     </SiteShell>
   )
