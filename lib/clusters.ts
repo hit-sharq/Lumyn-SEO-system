@@ -39,6 +39,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       'php-8-upgrade-guide-kenya-wordpress',
       'business-banking-kenya-sme-2026',
       'crypto-law-kenya-business-guide',
+      'pakakumi-kenya-crash-game-platform',
     ],
   },
   'seo-foundations': {
@@ -67,7 +68,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
     pillar: 'why-we-built-enkaji',
     description: 'Project stories and post-mortems. Highest trust value per word, weakest search volume.',
     intent: 'brand',
-    members: ['why-we-built-enkaji', 'why-we-built-dwell-ke', 'why-we-built-pakakumi'],
+    members: ['why-we-built-enkaji', 'why-we-built-dwell-ke'],
   },
   'studio-process': {
     id: 'studio-process',
