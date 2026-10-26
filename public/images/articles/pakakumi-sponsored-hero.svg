@@ -24,8 +24,8 @@
   <path d="M560 300 L590 330 L645 265" fill="none" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="645" cy="265" r="7" fill="#ff6b6b"/>
   <g fill="#ffffff" font-family="Arial, sans-serif" font-weight="800" text-anchor="middle">
-    <text x="600" y="470" font-size="30" fill="url(#accent)">Pakakumi — Real-Time Gaming</text>
-    <text x="600" y="512" font-size="18" fill="#888">Crash Game • M-Pesa • BCLB Licensed</text>
+    <text x="600" y="470" font-size="30" fill="url(#accent)">Pakakumi — Kenya's Crash Game</text>
+    <text x="600" y="512" font-size="18" fill="#888">Sports Betting • M-Pesa • BCLB Licensed</text>
   </g>
   <g opacity="0.15">
     <circle cx="200" cy="150" r="40" fill="#e63946"/>
