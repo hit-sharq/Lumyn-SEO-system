@@ -67,7 +67,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
     pillar: 'why-we-built-enkaji',
     description: 'Project stories and post-mortems. Highest trust value per word, weakest search volume.',
     intent: 'brand',
-    members: ['why-we-built-enkaji', 'why-we-built-dwell-ke'],
+    members: ['why-we-built-enkaji', 'why-we-built-dwell-ke', 'why-we-built-pakakumi'],
   },
   'studio-process': {
     id: 'studio-process',
