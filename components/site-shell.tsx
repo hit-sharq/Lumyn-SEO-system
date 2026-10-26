@@ -13,6 +13,7 @@ export function Header() {
       <Link href="/articles" onClick={() => setOpen(false)}>Articles</Link>
       <Link href="/news" onClick={() => setOpen(false)}>News</Link>
       <Link href="/about" onClick={() => setOpen(false)}>About</Link>
+      <Link href="/advertise" onClick={() => setOpen(false)}>Advertise</Link>
     </div>
     <button className="nav-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
       {open ? <X size={20} /> : <Menu size={20} />}
