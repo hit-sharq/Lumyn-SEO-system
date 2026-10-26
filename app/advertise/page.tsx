@@ -69,27 +69,7 @@ export default function AdvertisePage() {
             <h2>Recent sponsored articles</h2>
           </div>
         </div>
-        <div className="card-grid">
-          {sponsored.map((item) => (
-            <a key={item.slug} href={`/articles/${item.slug}`} className="content-card">
-              <div className="card-image">
-                <img src={item.image} alt={item.title} />
-                <span className="card-index">SPONSORED</span>
-              </div>
-              <div className="card-body">
-                <div className="card-meta">
-                  <span>{item.category}</span>
-                  <span>{item.date}</span>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.excerpt}</p>
-                <div className="card-footer">
-                  <span className="text-link">Read more</span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+        <p>Sponsored articles section temporarily removed for debugging.</p>
 
         <div className="section-heading">
           <div>
