@@ -60,6 +60,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       'state-of-digital-business-kenya-2026',
       'building-digital-products-for-africa',
       'mpesa-integration-lessons',
+      'mpesa-changing-ecommerce-kenya',
     ],
   },
   'lumyn-case-studies': {
