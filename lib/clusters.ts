@@ -7,6 +7,7 @@ export type ClusterId =
   | 'lumyn-case-studies'
   | 'studio-process'
   | 'engineering-deep-dives'
+  | 'digital-marketing'
 
 export type Cluster = {
   id: ClusterId
@@ -78,6 +79,19 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
     description: 'How Lumyn works. Not search-led, supports sales conversations directly.',
     intent: 'brand',
     members: ['the-lumyn-studio-system'],
+  },
+  'digital-marketing': {
+    id: 'digital-marketing',
+    name: 'Digital Marketing',
+    pillar: 'meta-ads-vs-google-ads-kenya',
+    description: 'Paid acquisition, advertising costs, and measurement for Kenyan businesses.',
+    intent: 'commercial',
+    members: [
+      'facebook-instagram-advertising-cost-kenya-2026',
+      'google-ads-small-business-kenya-beginners-guide',
+      'meta-ads-vs-google-ads-kenya',
+      'how-to-measure-ads-working-kenya',
+    ],
   },
   'engineering-deep-dives': {
     id: 'engineering-deep-dives',
@@ -182,7 +196,7 @@ export const ROADMAP: PlannedArticle[] = [
   {
     slug: 'facebook-instagram-advertising-cost-kenya-2026',
     title: 'How Much Does Facebook and Instagram Advertising Cost in Kenya (2026)',
-    cluster: 'seo-foundations',
+    cluster: 'digital-marketing',
     purpose: 'Paid acquisition cost transparency. Complements SEO cluster with Meta Ads pricing reality.',
     docRef: 'user-request',
     priority: 8,
@@ -191,7 +205,7 @@ export const ROADMAP: PlannedArticle[] = [
   {
     slug: 'google-ads-small-business-kenya-beginners-guide',
     title: 'How to Run Google Ads for a Small Business in Kenya: Beginner\'s Guide',
-    cluster: 'seo-foundations',
+    cluster: 'digital-marketing',
     purpose: 'Practical Google Ads setup for Kenyan SMEs. Fills the paid-search gap in the SEO cluster.',
     docRef: 'user-request',
     priority: 9,
@@ -200,7 +214,7 @@ export const ROADMAP: PlannedArticle[] = [
   {
     slug: 'meta-ads-vs-google-ads-kenya',
     title: 'Meta Ads vs Google Ads: Which Is Better for Kenyan Businesses?',
-    cluster: 'seo-foundations',
+    cluster: 'digital-marketing',
     purpose: 'Decision framework comparing the two main paid channels for local businesses.',
     docRef: 'user-request',
     priority: 10,
@@ -209,7 +223,7 @@ export const ROADMAP: PlannedArticle[] = [
   {
     slug: 'how-to-measure-ads-working-kenya',
     title: 'How to Measure Whether Your Ads Are Actually Working (Without Being a Marketer)',
-    cluster: 'seo-foundations',
+    cluster: 'digital-marketing',
     purpose: 'Attribution basics for non-technical founders. Connects ad spend to business outcomes.',
     docRef: 'user-request',
     priority: 11,
