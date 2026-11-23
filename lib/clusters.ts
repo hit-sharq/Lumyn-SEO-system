@@ -62,6 +62,9 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       'building-digital-products-for-africa',
       'mpesa-integration-lessons',
       'mpesa-changing-ecommerce-kenya',
+      'accept-mpesa-payments-website-kenya',
+      'paybill-vs-till-number-kenya',
+      'spot-fake-websites-mpesa-scams-kenya',
     ],
   },
   'lumyn-case-studies': {
