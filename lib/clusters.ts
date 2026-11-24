@@ -95,6 +95,8 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       'google-ads-small-business-kenya-beginners-guide',
       'meta-ads-vs-google-ads-kenya',
       'how-to-measure-ads-working-kenya',
+      'running-ads-across-media-channels-kenya',
+      'reverse-engineering-seo-media-buys-kenya',
     ],
   },
   'engineering-deep-dives': {
