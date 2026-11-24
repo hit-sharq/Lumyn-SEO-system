@@ -49,7 +49,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
     pillar: 'seo-for-kenyan-businesses-beginners-guide',
     description: 'Search visibility fundamentals for Kenyan businesses and the teams that serve them.',
     intent: 'informational',
-    members: ['seo-for-kenyan-businesses-beginners-guide', 'get-your-business-on-google-kenya', 'how-ai-transforming-seo-2026', 'seo-digital-marketing-trends-2027-kenya'],
+    members: ['seo-for-kenyan-businesses-beginners-guide', 'get-your-business-on-google-kenya', 'how-ai-transforming-seo-2026', 'seo-digital-marketing-trends-2027-kenya', 'generative-engine-optimization-geo-guide', 'ai-visibility-tracking-brands', 'ai-seo-automation-tools'],
   },
   'kenya-digital-economy': {
     id: 'kenya-digital-economy',
