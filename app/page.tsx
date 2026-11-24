@@ -22,7 +22,7 @@ export default function Page() {
           <div className="hero-bottom">
             <p>Lumyn Technologies is a Nairobi-based studio crafting enterprise-grade software — from M-Pesa-integrated platforms to AI-assisted products — for businesses ready to move faster than their market.</p>
             <div className="hero-actions">
-              <Link href="/contact" className="button button-dark">Start your project <ArrowUpRight size={16} /></Link>
+              <a href="https://www.lumyn.co.ke/get-started" className="button button-dark" target="_blank" rel="noopener noreferrer">Start your project <ArrowUpRight size={16} /></a>
               <Link href="/articles" className="button button-outline">Explore our insights</Link>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function Page() {
           <span className="section-label">Ready to build?</span>
           <h2>Let's build <em>your next thing.</em></h2>
           <p>Lumyn Technologies is a Nairobi-based studio crafting enterprise-grade software for businesses ready to move faster than their market.</p>
-          <Link href="/contact" className="button button-orange">Start your project <ArrowUpRight size={16} /></Link>
+          <a href="https://www.lumyn.co.ke/get-started" className="button button-orange" target="_blank" rel="noopener noreferrer">Start your project <ArrowUpRight size={16} /></a>
         </section>
       </main>
     </SiteShell>
