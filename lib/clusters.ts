@@ -65,6 +65,7 @@ export const CLUSTERS: Record<ClusterId, Cluster> = {
       'accept-mpesa-payments-website-kenya',
       'paybill-vs-till-number-kenya',
       'spot-fake-websites-mpesa-scams-kenya',
+      'kenya-digital-economy-2027',
     ],
   },
   'lumyn-case-studies': {
